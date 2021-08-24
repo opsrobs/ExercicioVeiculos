@@ -1,0 +1,28 @@
+Index: src/com/company/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.company;\r\nimport javax.swing.*;\r\n\r\nimport static com.company.ServicoVeiculo.*;\r\n\r\npublic class Main {\r\n\r\n    public static void main(String[] args) {\r\n        Veiculo veiculo;\r\n        ServicoVeiculo servicoVeiulo = new ServicoVeiculo();\r\n\r\n        String placa= JOptionPane.showInputDialog(\"Informe a placa do veiculo: \").toUpperCase();\r\n\r\n        while (!placa.equalsIgnoreCase(\"fim\")){\r\n            int ano= Integer.parseInt(JOptionPane.showInputDialog(\"Informe o ano do veiculo [ex: 0000] ou (FIM) sair: \"));\r\n            String motor= JOptionPane.showInputDialog(\"Informe o motor do veiculo: \");\r\n            String chassi= JOptionPane.showInputDialog(\"Informe o chassi do veiculo: \");\r\n            String cor= JOptionPane.showInputDialog(\"Informe a cor do veiculo: \").toUpperCase();\r\n            String montadora= JOptionPane.showInputDialog(\"Informe a montadora do veiculo: \").toUpperCase();\r\n            veiculo = new Veiculo(placa,ano,motor,chassi,cor,montadora);\r\n\r\n            servicoVeiulo.retornarListaVeiculos(veiculo);\r\n            servicoVeiulo.validadorPlaca();\r\n            placa= JOptionPane.showInputDialog(\"Informe a placa do veiculo: \").toUpperCase();\r\n        }\r\n        System.out.println(servicoVeiulo.toString());\r\n\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/company/Main.java b/src/com/company/Main.java
+--- a/src/com/company/Main.java	(revision 6156f499b375eae9ffcd3fa19060be5be964ce9e)
++++ b/src/com/company/Main.java	(date 1629834504240)
+@@ -1,8 +1,6 @@
+ package com.company;
+ import javax.swing.*;
+ 
+-import static com.company.ServicoVeiculo.*;
+-
+ public class Main {
+ 
+     public static void main(String[] args) {
+@@ -23,7 +21,7 @@
+             servicoVeiulo.validadorPlaca();
+             placa= JOptionPane.showInputDialog("Informe a placa do veiculo: ").toUpperCase();
+         }
+-        System.out.println(servicoVeiulo.toString());
++//        System.out.println(servicoVeiulo.toString());
+ 
+ 
+     }
